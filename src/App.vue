@@ -27,6 +27,7 @@
         <div class="item" to-applet="zoom" style="color: #fff">点击以放大动画进入页面</div>
         <div class="item" to-applet="flip" style="color: #fff">点击以中心翻转动画进入页面</div>
         <div class="item" to-applet="sheet" style="color: #fff">点击以从底部弹出进入页面</div>
+        <a class="item" href="https://tmall.com" style="color: #fff">点击以打开A链接，不预载，跨域时能力也不被继承</a>
       </div>
     </define-applet>
     <define-applet applet-id="tab1">
