@@ -164,6 +164,17 @@ createApplication({
         animation: 'slide'
       },
     },
+    paper: {
+      config: {
+        free: true,
+        title: 'Paper',
+        modality: 'paper',
+        color: '#3a3574',
+        paperOptions: {
+          top: '10px'
+        }
+      },
+    },
     sheet: {
       config: {
         free: true,

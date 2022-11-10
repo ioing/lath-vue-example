@@ -18,7 +18,7 @@ defineProps<{ msg: string }>()
 }
 h1 {
   color: #fff;
-  font-size: 42px;
+  font-size: 58px;
   height: 60px;
   width: 100%;
   text-align: center;

@@ -20,14 +20,22 @@
       <MenuBar />
     </define-applet>
     <define-applet applet-id="home">
-      <div style="width: 100%">
+      <div style="width: 100%; padding-bottom: 100px;">
         <HelloWorld msg="Hello Lath" />
-        <div class="item" to-applet="slide" style="color: #fff">点击左滑进入到页面</div>
-        <div class="item" to-applet="slideTabGroup" style="color: #fff">点击进入到一个全屏且可滑动的页面</div>
-        <div class="item" to-applet="zoom" style="color: #fff">点击以放大动画进入页面</div>
-        <div class="item" to-applet="flip" style="color: #fff">点击以中心翻转动画进入页面</div>
-        <div class="item" to-applet="sheet" style="color: #fff">点击以从底部弹出进入页面</div>
-        <a class="item" href="https://tmall.com" style="color: #fff">点击以打开A链接，不预载，跨域时能力也不被继承</a>
+        <h1>一些窗口效果例子</h1>
+        <div class="item" to-applet="slide">点击滑动打开</div>
+        <div class="item" to-applet="slideTabGroup">进入到一个 Slide 页面</div>
+        <div class="item" to-applet="zoom">点击以放大动画打开</div>
+        <div class="item" to-applet="flip">点击以中心翻转打开</div>
+        <div class="item" to-applet="sheet">点击以从底部弹出打开</div>
+        <hr />
+        <a class="item" href="https://tmall.com" style="background-color: rgb(233 62 62 / 95%)">点击以打开A链接<p>不预载，跨域时能力也不被继承</p></a>
+        <hr />
+        <div class="card" to-applet="paper">
+          <div class="icon"></div>
+          <p>Bring interactive experiences comparable to Native Apps.</p>
+        </div>
+        <hr />
       </div>
     </define-applet>
     <define-applet applet-id="tab1">
@@ -59,9 +67,18 @@
       <p>手指在屏幕中间往左滑退出</p>
     </define-applet>
     <define-applet applet-id="slide">
-      <HelloWorld msg="Slide" />
+      <HelloWorld msg="Fullscreen" />
       <p>手指在屏幕中间往左滑退出</p>
       <p>荐：此类型的动画性能为最优</p>
+    </define-applet>
+    <define-applet applet-id="paper">
+      <div class="card free">
+        <div class="icon"></div>
+        <p>Bring interactive experiences comparable to Native Apps.</p>
+      </div>
+      <HelloWorld msg="Paper" />
+      <p>手指在卡片顶部的手柄处下滑退出</p>
+      <p>手指在屏幕中间往左滑也可退出</p>
     </define-applet>
     <define-applet applet-id="sheet">
       <HelloWorld msg="Pop-up Sheet" />
@@ -87,14 +104,29 @@ body {
   color: #2c3e50;
 }
 .item {
-  margin: 7px 8px;
-  padding: 4px 4px 3px;
-  border: 1px solid blue;
-  font-size: 13px;
+  margin: 7px 25px;
+  padding: 12px 20px;
+  font-size: 14px;
   text-align: center;
+  background-color: rgb(62 110 233 / 95%);
+  border-radius: 40px;
+  color: #fff;
+  display: block;
+  text-decoration: none;
+  font-weight: bold;
+}
+.item p {
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
 }
 p {
   color: rgba(255, 255, 255, .5);
+}
+hr {
+  margin: 30px 0;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, .1);
 }
 .tab1-header {
   position: fixed;
@@ -125,5 +157,31 @@ p {
   right: 20px;
   bottom: calc(80px + constant(safe-area-inset-top));
   bottom: calc(80px + env(safe-area-inset-top));
+}
+.card {
+  position: relative;
+  margin: 3vw auto;
+  width: 50vw;
+  height: 50vw;
+  padding: 5vw;
+  border-radius: 16px;
+  background-color: aquamarine;
+  color: #000;
+  max-width: 500px;
+  max-height: 300px;
+}
+.card.free {
+  width: auto;
+}
+.card .icon {
+  margin: 5vw auto;
+  width: 70%;
+  height: 20vw;
+  border-radius: 16px;
+  background-color: rgb(194, 0, 253);
+}
+.card p {
+  color: #000;
+  font-size: 20px;
 }
 </style>
